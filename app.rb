@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/messages'
 
 class Chitter < Sinatra::Base
   configure :development do
@@ -8,7 +9,9 @@ class Chitter < Sinatra::Base
   # routes 
 
   get '/' do
-    'hello world'
+    @messages = Messages.all
+    erb :index
+
   end
 
   run if app_file == $0
