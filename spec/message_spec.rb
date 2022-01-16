@@ -4,8 +4,8 @@ describe Message do
     it 'returns all messages' do
       connection = PG.connect(dbname: 'chitter_app_test')
 
-      connection.exec("INSERT INTO messages (msg) VALUES ('Hello everyone.');")
-      connection.exec("INSERT INTO messages (msg) VALUES ('I am coding!');")
+      Message.create(message: 'Hello everyone.')
+      Message.create(message: 'I am coding!')
 
       messages = Message.all
 

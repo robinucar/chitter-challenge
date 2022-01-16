@@ -1,11 +1,12 @@
-require 'pg'
+require 'message'
 feature 'wieving all messages' do
   scenario 'visiting the index page' do
-    connection = PG.connect(dbname: 'chitter_app_test')
+    #connection = PG.connect(dbname: 'chitter_app_test')
 
-    connection.exec("INSERT INTO messages (msg) VALUES ('Hello everyone.');")
-    connection.exec("INSERT INTO messages (msg) VALUES ('I am coding!');")
-
+    #connection.exec("INSERT INTO messages (msg) VALUES ('Hello everyone.');")
+    #connection.exec("INSERT INTO messages (msg) VALUES ('I am coding!');")
+    Message.create(message: 'Hello everyone.')
+    Message.create(message: 'I am coding!')
     visit('/messages')
 
     expect(page).to have_content 'Hello everyone.'
