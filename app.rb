@@ -9,6 +9,7 @@ class Chitter < Sinatra::Base
   # routes 
 
   get '/' do
+    # p ENV
     @messages = Messages.all
     erb :index
 

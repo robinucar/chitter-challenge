@@ -1,3 +1,11 @@
+To set up the database
+Connect to psql and create the chitter_app and chitter_app_test databases:
+
+CREATE DATABASE chitter_app;
+CREATE DATABASE chitter_app_test;
+To set up the appropriate tables, connect to each database in psql and run the SQL scripts in the db/migrations folder in the given order.
+
+
 Chitter Challenge
 =================
 
